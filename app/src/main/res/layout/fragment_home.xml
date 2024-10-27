@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+
+    <!-- Saldo Section -->
+    <TextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Malam, Ikhwan Hanif Fridaus"
+        android:textSize="13sp"
+        android:textColor="#7A7A7A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp" />
+
+    <ImageView
+        android:id="@+id/img_bni_logo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_greeting"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_saldo_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_bni_logo"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp" /> />
+
+    <View
+        android:id="@+id/divider_saldo_orange"
+        android:layout_width="50dp"
+        android:layout_height="2dp"
+        android:background="#FF6600"
+        app:layout_constraintTop_toBottomOf="@id/tv_saldo_label"
+        app:layout_constraintStart_toStartOf="@id/tv_saldo_label"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="3dp" />
+
+    <View
+        android:id="@+id/divider_saldo_black"
+        android:layout_width="330dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/divider_saldo_orange"
+        app:layout_constraintTop_toBottomOf="@id/tv_saldo_label" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_saldo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_saldo_black"
+        app:layout_constraintBottom_toTopOf="@id/grid_shortcut">
+
+    <!-- Konten dalam CardView -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid_saldo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="13dp"
+        android:layout_marginTop="16dp">
+
+        <!-- Nama User -->
+        <TextView
+            android:id="@+id/tv_nama_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IKHWAN HANIF FRIDAUZ"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/iv_copy_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_content_copy_24"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="140dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_nama_user"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_nama_user" />
+
+        <!-- Tipe Akun -->
+        <TextView
+            android:id="@+id/tv_tipe_akun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BNI Taplus Muda | 7263-2938-2390-****"
+            android:textSize="14sp"
+            android:textColor="#7E7E7E"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_user"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Saldo dan icon mata -->
+        <TextView
+            android:id="@+id/tv_saldo_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp *********"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tipe_akun"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_eye_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_visibility_off_24"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tipe_akun"
+            app:layout_constraintStart_toEndOf="@+id/tv_saldo_value"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_saldo_value" />
+
+        <!-- Tombol Tarik Tunai -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_tarik_tunai"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="Tarik Tunai"
+            android:background="@drawable/rounded_background"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF6600"
+            app:layout_constraintTop_toBottomOf="@+id/tv_saldo_value"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Tombol Setor Tunai -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_setor_tunai"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="Setor Tunai"
+            android:background="@drawable/rounded_background"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF6600"
+            app:layout_constraintTop_toBottomOf="@+id/tv_saldo_value"
+            app:layout_constraintStart_toEndOf="@+id/btn_tarik_tunai"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tv_shortcut_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shortcut Kamu"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/card_saldo"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp" />
+    <!-- Shortcut Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid_shortcut"
+        android:layout_width="0dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/card_saldo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- First Row - Transfer Uang and Virtual Account -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_transfer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/card_virtual_account"
+            app:layout_constraintHorizontal_bias="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/transfer1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer Uang"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:paddingTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_virtual_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_transfer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/va" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Virtual Account"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:paddingTop="8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Second Row - Pulsa / Data and Menu Lengkap -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pulsa_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_transfer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/card_menu_lengkap"
+            app:layout_constraintHorizontal_bias="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/pulsa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulsa / Data"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:paddingTop="8dp"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_menu_lengkap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/card_virtual_account"
+            app:layout_constraintStart_toEndOf="@id/card_pulsa_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/menu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu Lengkap"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:paddingTop="8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!-- Insight BNI Section -->
+    <TextView
+        android:id="@+id/tv_insight_bni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insight BNI"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/grid_shortcut"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_insight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_insight_bni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scrollbars="none"
+        android:layout_marginStart="7dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <!-- Example of an insight item -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/rectangle_47" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/rectangle_48" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/rectangle_47" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/rectangle_48" />
+            </LinearLayout>
+
+            <!-- Repeat insight items as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
